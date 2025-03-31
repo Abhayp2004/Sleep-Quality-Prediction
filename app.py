@@ -4,8 +4,8 @@ import joblib
 
 # Load the trained model, scaler, and encoder
 model = joblib.load("models/sleep_quality_model.pkl")
-scaler = joblib.load("scaler.pkl")
-le = joblib.load("label_encoder.pkl")
+scaler = joblib.load("models/scaler.pkl")
+le = joblib.load("models/label_encoder.pkl")
 
 # Get the available categories from the label encoder
 occupation_categories = le.classes_.tolist()
