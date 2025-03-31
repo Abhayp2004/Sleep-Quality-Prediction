@@ -1,18 +1,25 @@
 import streamlit as st
 import numpy as np
 import joblib
+from sklearn.preprocessing import LabelEncoder
 
-# Load the trained model, scaler, and encoders
+# Load the trained model and scaler
 model = joblib.load("models/sleep_quality_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
-occupation_le = joblib.load("occupation_encoder.pkl")
-bmi_le = joblib.load("bmi_encoder.pkl")
-sleep_disorder_le = joblib.load("sleep_disorder_encoder.pkl")
 
-# Get the available categories from the label encoders
-occupation_categories = occupation_le.classes_.tolist()
-bmi_categories = bmi_le.classes_.tolist()
-sleep_disorder_categories = sleep_disorder_le.classes_.tolist()
+# Define the categories
+occupation_categories = ["Student", "Employee", "Self-employed", "Unemployed"]
+bmi_categories = ["Underweight", "Normal", "Overweight", "Obese"]
+sleep_disorder_categories = ["None", "Insomnia", "Sleep Apnea", "Other"]
+
+# Create and fit label encoders
+occupation_le = LabelEncoder()
+bmi_le = LabelEncoder()
+sleep_disorder_le = LabelEncoder()
+
+occupation_le.fit(occupation_categories)
+bmi_le.fit(bmi_categories)
+sleep_disorder_le.fit(sleep_disorder_categories)
 
 # Streamlit App UI
 st.title("🛌 Sleep Quality Prediction App")
