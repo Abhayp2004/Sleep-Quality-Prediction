@@ -23,7 +23,7 @@ daily_steps = st.number_input("Daily Steps", min_value=0, max_value=30000, value
 sleep_disorder = st.selectbox("Sleep Disorder", ["None", "Insomnia", "Sleep Apnea", "Other"])
 
 # Convert categorical values using LabelEncoder
-occupation_encoded = le.transform([Occupation])[0]
+occupation_encoded = le.transform([occupation])[0]
 bmi_encoded = le.transform([BMI_Category])[0]
 sleep_disorder_encoded = le.transform([Sleep_Disorder])[0]
 
