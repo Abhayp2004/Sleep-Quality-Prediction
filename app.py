@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # Load the trained model, scaler, and encoder
-model = joblib.load("sleep_quality_model.pkl")
+model = joblib.load("models/sleep_quality_model.pkl")
 scaler = joblib.load("scaler.pkl")
 le = joblib.load("label_encoder.pkl")
 
