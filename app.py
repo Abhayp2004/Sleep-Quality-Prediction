@@ -22,6 +22,12 @@ heart_rate = st.number_input("Heart Rate (BPM)", min_value=40, max_value=120, va
 daily_steps = st.number_input("Daily Steps", min_value=0, max_value=30000, value=5000)
 sleep_disorder = st.selectbox("Sleep Disorder", ["None", "Insomnia", "Sleep Apnea", "Other"])
 
+try:
+    occupation_encoded = le.transform([occupation])[0]
+except ValueError:
+    # Handle unseen label here
+    occupation_encoded = le.transform(['Unknown'])[0]  # Or handle it based on your application logic
+
 # Convert categorical values using LabelEncoder
 occupation_encoded = le.transform([occupation])[0]
 bmi_encoded = le.transform([BMI_Category])[0]
