@@ -59,6 +59,11 @@ Classification Report (Precision, Recall, F1-score)
 🚀 Deployment
 The model is deployed using Streamlit for a user-friendly interface where users can input their parameters and get sleep quality predictions.
 
+## 🌍 Live Demo  
+
+🚀 Check out the live Streamlit app: [Sleep Quality Prediction](https://zcqzufcqezejcaphes3pze.streamlit.app/)
+
+
  How to Run
 Clone the repository:
 
