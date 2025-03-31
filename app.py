@@ -5,7 +5,7 @@ import joblib
 # Load the trained model, scaler, and encoder
 model = joblib.load("models/sleep_quality_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
-le = joblib.load("label_encoder.pkl")
+le = joblib.load("models/label_encoder.pkl")
 
 # Streamlit App UI
 st.title("🛌 Sleep Quality Prediction App")
