@@ -23,9 +23,9 @@ daily_steps = st.number_input("Daily Steps", min_value=0, max_value=30000, value
 sleep_disorder = st.selectbox("Sleep Disorder", ["None", "Insomnia", "Sleep Apnea", "Other"])
 
 # Convert categorical values using LabelEncoder
-occupation_encoded = le.transform([occupation])[0]
-bmi_encoded = le.transform([bmi_category])[0]
-sleep_disorder_encoded = le.transform([sleep_disorder])[0]
+occupation_encoded = le.transform([Occupation])[0]
+bmi_encoded = le.transform([BMI_Category])[0]
+sleep_disorder_encoded = le.transform([Sleep_Disorder])[0]
 
 # Scale numeric features
 scaled_features = scaler.transform([[age, physical_activity, daily_steps]])
